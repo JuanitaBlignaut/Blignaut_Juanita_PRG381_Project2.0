@@ -5,13 +5,14 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.Blignaut_Juanita_PRG381_Project.Student.Student;
+import com.example.Blignaut_Juanita_PRG381_Project.Admin.Admin;
 
-public class CustomStudentDetails implements UserDetails{
-    private Student student;
+public class CustomAdminDetails implements UserDetails{
+    
+    private Admin admin;
 
-    public CustomStudentDetails(Student student){
-        this.student = student;
+    public CustomAdminDetails(Admin admin){
+        this.admin = admin;
     }
 
     
@@ -22,12 +23,12 @@ public class CustomStudentDetails implements UserDetails{
 
     @Override
     public String getPassword() {
-        return student.getPassword();
+        return admin.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return student.getEmail();
+        return admin.getEmail();
     }
  
     @Override
@@ -51,7 +52,6 @@ public class CustomStudentDetails implements UserDetails{
     }
      
     public String getFullName() {
-        return student.getFirstname() + " " + student.getLastname();
+        return admin.getFirstname() + " " + admin.getLastname();
     }
-
 }

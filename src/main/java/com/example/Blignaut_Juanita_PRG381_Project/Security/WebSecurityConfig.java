@@ -58,6 +58,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
             .permitAll()
             .and()
             .logout().logoutSuccessUrl("/").permitAll();
+
+            // http.authorizeRequests()
+            // .antMatchers("/adminstudents").authenticated()
+            // .anyRequest().permitAll()
+            // .and()
+            // .formLogin()
+            // .usernameParameter("email")
+            // .defaultSuccessUrl("/adminstudents")
+            // .permitAll()
+            // .and()
+            // .logout().logoutSuccessUrl("/").permitAll();
     }
 
 }

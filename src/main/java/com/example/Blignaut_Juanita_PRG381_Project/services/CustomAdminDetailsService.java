@@ -5,19 +5,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.example.Blignaut_Juanita_PRG381_Project.Student.Student;
-import com.example.Blignaut_Juanita_PRG381_Project.Student.StudentRepository;
+import com.example.Blignaut_Juanita_PRG381_Project.Admin.Admin;
+import com.example.Blignaut_Juanita_PRG381_Project.Admin.AdminRepository;
 
-public class CustomStudentDetailsService implements UserDetailsService {
+public class CustomAdminDetailsService implements UserDetailsService{
     @Autowired
-    private StudentRepository studentRepo;
+    private AdminRepository adminRepo;
      
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Student student= studentRepo.findByEmail(username);
-        if (student == null) {
+        Admin admin= adminRepo.findByEmail(username);
+        if (admin == null) {
             throw new UsernameNotFoundException("User not found");
         }
-        return new CustomStudentDetails(student);
+        return new CustomAdminDetails(admin);
     }
 }

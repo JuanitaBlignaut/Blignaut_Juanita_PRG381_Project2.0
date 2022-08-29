@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.Blignaut_Juanita_PRG381_Project.Student;
-import com.example.Blignaut_Juanita_PRG381_Project.StudentRepository;
+import com.example.Blignaut_Juanita_PRG381_Project.Student.Student;
+import com.example.Blignaut_Juanita_PRG381_Project.Student.StudentRepository;
 
 @Controller
 public class AuthController {
@@ -27,7 +27,12 @@ public class AuthController {
     public String showLogin(){
         return "login";
     }
-    
+
+    @GetMapping("/adminlogin")
+    public String showAdminLogin(){
+        return "adminlogin";
+    }
+
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("student", new Student());
@@ -50,6 +55,15 @@ public class AuthController {
     public String listStudents(Model mod){
         List<Student> listStudents = studentRepo.findAll();
         mod.addAttribute("listStudents", listStudents);
+
+        return "students";
+        
+    }
+
+    @GetMapping("/adminstudents")
+    public String listStudent(Model mod){
+        List<Student> listStudents = studentRepo.findAll();
+        mod.addAttribute("listStudent", listStudents);
 
         return "students";
         
