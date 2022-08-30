@@ -28,11 +28,6 @@ public class AuthController {
         return "login";
     }
 
-    @GetMapping("/adminlogin")
-    public String showAdminLogin(){
-        return "adminlogin";
-    }
-
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("student", new Student());
@@ -59,13 +54,19 @@ public class AuthController {
         return "students";
         
     }
+    
+
+    @GetMapping("/adminlogin")
+    public String showAdminLogin(){
+        return "adminlogin";
+    }
 
     @GetMapping("/adminstudents")
     public String listStudent(Model mod){
-        List<Student> listStudents = studentRepo.findAll();
-        mod.addAttribute("listStudent", listStudents);
+        List<Student> listStudent = studentRepo.findAll();
+        mod.addAttribute("listStudents", listStudent);
 
-        return "students";
+        return "adminstudents";
         
     }
 }

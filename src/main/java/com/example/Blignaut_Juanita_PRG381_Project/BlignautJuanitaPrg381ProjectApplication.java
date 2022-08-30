@@ -5,8 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.Blignaut_Juanita_PRG381_Project.Admin.Admin;
-import com.example.Blignaut_Juanita_PRG381_Project.Admin.AdminRepository;
+import com.example.Blignaut_Juanita_PRG381_Project.Phase2_Admin.Admin;
+import com.example.Blignaut_Juanita_PRG381_Project.Phase2_Admin.AdminRepository;
 
 
 @SpringBootApplication
