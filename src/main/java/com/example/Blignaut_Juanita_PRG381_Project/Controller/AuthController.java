@@ -64,7 +64,7 @@ public class AuthController {
     @GetMapping("/adminstudents")
     public String listStudent(Model mod){
         List<Student> listStudent = studentRepo.findAll();
-        mod.addAttribute("listStudents", listStudent);
+        mod.addAttribute("listStudent", listStudent);
 
         return "adminstudents";
         
